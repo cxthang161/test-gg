@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import node from '@astrojs/node';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   site: 'https://test-gg-seven.vercel.app',
@@ -13,7 +12,9 @@ export default defineConfig({
     sitemap(),
   ],
   output: 'server',
-  adapter: vercel(),
+  adapter: node({
+    mode: 'standalone',
+  }),
   vite: {
     css: {
       preprocessorOptions: {
