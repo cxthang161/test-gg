@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: http://demo2.vnisc.com.vn/sitemap.xml
+Sitemap: https://test-gg-seven.vercel.app/

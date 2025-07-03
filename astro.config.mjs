@@ -1,20 +1,18 @@
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless'; // hoặc 'edge'
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'http://demo2.vnisc.com.vn',
+  site: 'https://test-gg-seven.vercel.app/',
+  output: 'server',
+  adapter: vercel(),
   integrations: [
     react({
       include: ['**/react/*'],
     }),
     sitemap(),
   ],
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
   vite: {
     css: {
       preprocessorOptions: {
