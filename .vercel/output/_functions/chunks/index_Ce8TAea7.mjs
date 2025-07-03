@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, d as addAttribute, b as renderComponent } from './astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { a as $$SmartphoneIcon } from './ZoomOutIcon_Bvkbm1LY.mjs';
-import { c as configApp } from './index_C0gxgacJ.mjs';
+import { a as $$SmartphoneIcon } from './ZoomOutIcon_DaodLbuV.mjs';
+import { c as configApp } from './index_C7Rcm1oi.mjs';
 import { $ as $$IconFacebook, a as $$IconZalo, b as $$IconPhone } from './IconZalo_CNDuH1lK.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

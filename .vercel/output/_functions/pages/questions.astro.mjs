@@ -1,9 +1,9 @@
 import { c as createComponent, r as renderTemplate, b as renderComponent, m as maybeRenderHead, d as addAttribute } from '../chunks/astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_CrkQup_b.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DiTWz_fX.mjs';
 import { q as questions } from '../chunks/questions_DuX8o4TY.mjs';
 import { c as convertStringtoUrl } from '../chunks/index_DKatZWhz.mjs';
-import { $ as $$Index$1 } from '../chunks/index_mtMQvu7q.mjs';
+import { $ as $$Index$1 } from '../chunks/index_DboOV6tZ.mjs';
 export { renderers } from '../renderers.mjs';
 
 const prerender = false;

@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as renderComponent } from './astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { d as $$ArrowRightCircleIcon } from './ZoomOutIcon_Bvkbm1LY.mjs';
+import { d as $$ArrowRightCircleIcon } from './ZoomOutIcon_DaodLbuV.mjs';
 import { jsx, jsxs } from 'react/jsx-runtime';
 import { useState } from 'react';
 /* empty css                         */

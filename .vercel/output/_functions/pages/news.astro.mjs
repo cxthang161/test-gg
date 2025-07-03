@@ -1,14 +1,14 @@
 import { a as createAstro, c as createComponent, r as renderTemplate, m as maybeRenderHead, d as addAttribute, b as renderComponent } from '../chunks/astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_CrkQup_b.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DiTWz_fX.mjs';
 import { b as blogDetail } from '../chunks/defaultData_x4PRe3E8.mjs';
-import { c as configApp } from '../chunks/index_C0gxgacJ.mjs';
+import { c as configApp } from '../chunks/index_C7Rcm1oi.mjs';
 import { i as isEmpty } from '../chunks/index_DKatZWhz.mjs';
-import { $ as $$Index$2 } from '../chunks/index_DLkRoQBz.mjs';
-import { $ as $$Index$3 } from '../chunks/index_mtMQvu7q.mjs';
+import { $ as $$Index$2 } from '../chunks/index_-7pT_fvV.mjs';
+import { $ as $$Index$3 } from '../chunks/index_DboOV6tZ.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const $$Index$1 = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index$1;

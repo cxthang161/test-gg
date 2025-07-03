@@ -2,7 +2,7 @@ import { a as createAstro, c as createComponent, r as renderTemplate, m as maybe
 import 'kleur/colors';
 import 'clsx';
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;

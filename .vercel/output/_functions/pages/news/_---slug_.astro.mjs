@@ -2,11 +2,11 @@ import { a as createAstro, c as createComponent, r as renderTemplate, b as rende
 import 'kleur/colors';
 import { b as blogDetail } from '../../chunks/defaultData_x4PRe3E8.mjs';
 import { i as isEmpty } from '../../chunks/index_DKatZWhz.mjs';
-import { $ as $$Layout } from '../../chunks/Layout_CrkQup_b.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_DiTWz_fX.mjs';
 /* empty css                                     */
-import { $ as $$Index$1 } from '../../chunks/index_DLkRoQBz.mjs';
-import { c as configApp } from '../../chunks/index_C0gxgacJ.mjs';
-import { $ as $$Index } from '../../chunks/index_mtMQvu7q.mjs';
+import { $ as $$Index$1 } from '../../chunks/index_-7pT_fvV.mjs';
+import { c as configApp } from '../../chunks/index_C7Rcm1oi.mjs';
+import { $ as $$Index } from '../../chunks/index_DboOV6tZ.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const zoom = (animation) => namedZoom("", animation);
@@ -28,7 +28,7 @@ const namedZoom = (keyframeNamePrefix, animation) => {
   return { forwards, backwards };
 };
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const prerender = false;
 const $$ = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);

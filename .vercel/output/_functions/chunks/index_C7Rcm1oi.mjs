@@ -17,7 +17,7 @@ const configApp = {
   name_banking: "Vietcombank",
   title_meta_layout: "Đặt vé máy bay online - MuaVeNhanh",
   email: "contact@email.com",
-  website: "https://test-gg-seven.vercel.app/",
+  website: "https://test-gg-seven.vercel.app",
   company_name: "MUA VÉ NHANH",
   company_description: "Công ty là đại lý Bạn muốn đặt chỗ nhanh? Hãy tải ngay ứng dụng! Trải nghiệm đặt chỗ dễ dàng và nhanh chóng nhất. Đặt vé máy bay trong chưa đầy 1 phút!",
   content_meta_layout: "Hệ thống đặt vé máy bay online trực tuyến tất cả các hãng - Chính xác - Nhanh chóng - Tiện lợi. Phục vụ 24/7 (không nghỉ).",

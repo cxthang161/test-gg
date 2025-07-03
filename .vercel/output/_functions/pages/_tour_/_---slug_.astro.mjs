@@ -1,15 +1,15 @@
 import { a as createAstro, c as createComponent, r as renderTemplate, b as renderComponent, m as maybeRenderHead, d as addAttribute, u as unescapeHTML, F as Fragment } from '../../chunks/astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { c as configApp } from '../../chunks/index_C0gxgacJ.mjs';
-import { $ as $$Layout } from '../../chunks/Layout_CrkQup_b.mjs';
+import { c as configApp } from '../../chunks/index_C7Rcm1oi.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_DiTWz_fX.mjs';
 import { C as Clock, L as Location, T as Transport } from '../../chunks/clock_DNqtj027.mjs';
-import { c as $$CalendarIcon } from '../../chunks/ZoomOutIcon_Bvkbm1LY.mjs';
+import { c as $$CalendarIcon } from '../../chunks/ZoomOutIcon_DaodLbuV.mjs';
 import { i as isEmpty } from '../../chunks/index_DKatZWhz.mjs';
 import '../../chunks/index_C_ZeCZ7O.mjs';
-import { $ as $$Image } from '../../chunks/_astro_assets_Bg1GeL1W.mjs';
+import { $ as $$Image } from '../../chunks/_astro_assets_CQcozxZd.mjs';
 export { renderers } from '../../renderers.mjs';
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const prerender = false;
 const $$ = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);

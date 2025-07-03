@@ -1,7 +1,7 @@
 import { a as createAstro, c as createComponent, r as renderTemplate, b as renderComponent } from './astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
 import './index_C_ZeCZ7O.mjs';
-import { $ as $$Image } from './_astro_assets_Bg1GeL1W.mjs';
+import { $ as $$Image } from './_astro_assets_CQcozxZd.mjs';
 
 const errorImage = new Proxy({"src":"/_astro/errorImage.CHwfbJKy.png","width":400,"height":319,"format":"png"}, {
 						get(target, name, receiver) {
@@ -16,7 +16,7 @@ const errorImage = new Proxy({"src":"/_astro/errorImage.CHwfbJKy.png","width":40
 						}
 					});
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;

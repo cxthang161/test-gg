@@ -1,11 +1,11 @@
 import { a as createAstro, c as createComponent } from '../chunks/astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
 import 'clsx';
-import '../chunks/Layout_CrkQup_b.mjs';
-import '../chunks/index_mtMQvu7q.mjs';
+import '../chunks/Layout_DiTWz_fX.mjs';
+import '../chunks/index_DboOV6tZ.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Index;

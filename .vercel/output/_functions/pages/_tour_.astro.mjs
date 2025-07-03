@@ -1,14 +1,14 @@
 import { a as createAstro, c as createComponent, r as renderTemplate, m as maybeRenderHead, b as renderComponent, d as addAttribute, u as unescapeHTML, F as Fragment } from '../chunks/astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { $ as $$Layout } from '../chunks/Layout_CrkQup_b.mjs';
-import { $ as $$Index$3 } from '../chunks/index_DLkRoQBz.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DiTWz_fX.mjs';
+import { $ as $$Index$3 } from '../chunks/index_-7pT_fvV.mjs';
 import { L as Location, C as Clock, T as Transport } from '../chunks/clock_DNqtj027.mjs';
-import { c as $$CalendarIcon } from '../chunks/ZoomOutIcon_Bvkbm1LY.mjs';
-import { c as configApp } from '../chunks/index_C0gxgacJ.mjs';
-import { $ as $$Index$4 } from '../chunks/index_mtMQvu7q.mjs';
+import { c as $$CalendarIcon } from '../chunks/ZoomOutIcon_DaodLbuV.mjs';
+import { c as configApp } from '../chunks/index_C7Rcm1oi.mjs';
+import { $ as $$Index$4 } from '../chunks/index_DboOV6tZ.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro$2 = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro$2 = createAstro("https://test-gg-seven.vercel.app");
 const $$Index$2 = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Index$2;
@@ -16,7 +16,7 @@ const $$Index$2 = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${dataTour ? renderTemplate`${maybeRenderHead()}<div class="card-tour">${renderComponent($$result, "ImageComponent", $$Index$3, { "urlImage": `${dataTour.imageURL}`, "width": 240, "height": 240, "alt": `img-${dataTour.postName}` })}<div class="card-tour__container"><div class="card-tour__container--content"><p class="card-tour__container--content-title">${dataTour.title}</p><div class="card-tour__container--content--des"><div>${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`${unescapeHTML(Location)}` })}<p>${dataTour.departPlace}</p></div><div>${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`${unescapeHTML(Clock)}` })}<p>${dataTour.duration}</p></div></div><div class="card-tour__container--content--des"><div>${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`${unescapeHTML(Transport)}` })}<p>${dataTour.transport}</p></div><div>${renderComponent($$result, "CalendarIcon", $$CalendarIcon, {})}<p>${dataTour.departDate}</p></div></div><div class="card-tour__container--content--short">${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`${unescapeHTML(dataTour.shortContent)}` })}</div></div><div class="card-tour__container--price"><strong>${dataTour.totalPrice}</strong><a${addAttribute(`/${path}/${dataTour.postName}`, "href")}>Xem chi tiết</a></div></div></div>` : renderTemplate`<p>Hiện tại chưa có tours</p>`}`;
 }, "C:/Users/Admin/Desktop/template/src/components/CardTour/index.astro", void 0);
 
-const $$Astro$1 = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro$1 = createAstro("https://test-gg-seven.vercel.app");
 const $$Index$1 = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Index$1;
@@ -39,7 +39,7 @@ const $$Index$1 = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<div class="tours"> <p>Tours hot</p> <div class="tours-list"> ${response?.map((tour) => renderTemplate`<div class="hot-tour"> ${renderComponent($$result, "ImageComponent", $$Index$3, { "urlImage": `${tour.imageURL}`, "width": 140, "height": 107, "alt": `img-${tour.postName}` })} <div class="hot-tour__container"> <div class="hot-tour__content"> <p class="hot-tour__content-title">${tour.title}</p> <div> <div> ${renderComponent($$result, "CalendarIcon", $$CalendarIcon, {})} <p>${tour.departDate}</p> </div> <div> ${renderComponent($$result, "Fragment", Fragment, {}, { "default": ($$result2) => renderTemplate`${unescapeHTML(Clock)}` })} <p>${tour.duration}</p> </div> </div> </div> <div class="hot-tour__content-price"> <strong>${tour.totalPrice}</strong> <a${addAttribute(`/${path?.path}/${tour.postName}`, "href")}>Xem chi tiết</a> </div> </div> </div>`)} ${response && response.length === 0 && renderTemplate`<p class="no-content">Không có bài viết</p>`} </div> </div>`;
 }, "C:/Users/Admin/Desktop/template/src/components/HotTour/index.astro", void 0);
 
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const prerender = false;
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);

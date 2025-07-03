@@ -1,8 +1,8 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as renderComponent, d as addAttribute, a as createAstro, g as renderSlot, h as renderHead } from './astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { e as $$MenuIcon, f as $$PhoneCallIcon, g as $$ClockIcon, b as $$DropletIcon, h as $$MailIcon, i as $$GlobeIcon } from './ZoomOutIcon_Bvkbm1LY.mjs';
-import { c as configApp } from './index_C0gxgacJ.mjs';
-import { $ as $$Index$3 } from './index_DLkRoQBz.mjs';
+import { e as $$MenuIcon, f as $$PhoneCallIcon, g as $$ClockIcon, b as $$DropletIcon, h as $$MailIcon, i as $$GlobeIcon } from './ZoomOutIcon_DaodLbuV.mjs';
+import { c as configApp } from './index_C7Rcm1oi.mjs';
+import { $ as $$Index$3 } from './index_-7pT_fvV.mjs';
 import 'clsx';
 /* empty css                          */
 import { $ as $$IconFacebook, a as $$IconZalo, b as $$IconPhone } from './IconZalo_CNDuH1lK.mjs';
@@ -75,7 +75,7 @@ const $$Index$1 = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<footer> <div class="container"> <div${addAttribute(`container-info ${"col-3"}`, "class")}> <div> <p>${configApp.company_name}</p> <p class="description-company">${configApp.company_description}</p> </div> <div> <p>Liên hệ</p> <hr> <ul> <li> <div> ${renderComponent($$result, "DropletIcon", $$DropletIcon, {})} <a${addAttribute(configApp.company_addess_map, "href")}>${configApp.company_addess}</a> </div> </li> <li> <div> ${renderComponent($$result, "PhoneCallIcon", $$PhoneCallIcon, {})} <a${addAttribute(`tel:${configApp.hotline_1}`, "href")}>Tel: ${configApp.hotline_1} - ${configApp.hotline_2}</a> </div> </li> <li> <div> ${renderComponent($$result, "MailIcon", $$MailIcon, {})} <a${addAttribute(`mailto:${configApp.email}`, "href")}>${configApp.email}</a> </div> </li> <li> <div> ${renderComponent($$result, "GlobeIcon", $$GlobeIcon, {})} <a${addAttribute(configApp.website, "href")} data-astro-reload>${configApp.website}</a> </div> </li> </ul> </div> <div> <p>Thông tin</p> <hr> <ul> <li> <a href="/introduce">Giới thiệu</a> </li> <li> <a href="/payment-options">Hướng dẫn thanh toán</a> </li> <li> <a href="/contact">Liên hệ</a> </li> <li> ${configApp.isCertification} </li> </ul> </div> ${configApp.isCertification} </div> </div> </footer>`;
 }, "C:/Users/Admin/Desktop/template/src/layouts/FooterLayout/index.astro", void 0);
 
-const $$Astro$2 = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro$2 = createAstro("https://test-gg-seven.vercel.app");
 const $$ViewTransitions = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$ViewTransitions;
@@ -83,7 +83,7 @@ const $$ViewTransitions = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`<meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback"${addAttribute(fallback, "content")}>`;
 }, "C:/Users/Admin/Desktop/template/node_modules/astro/components/ViewTransitions.astro", void 0);
 
-const $$Astro$1 = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro$1 = createAstro("https://test-gg-seven.vercel.app");
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Index;
@@ -96,7 +96,7 @@ var __freeze = Object.freeze;
 var __defProp = Object.defineProperty;
 var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
 var _a;
-const $$Astro = createAstro("https://test-gg-seven.vercel.app/");
+const $$Astro = createAstro("https://test-gg-seven.vercel.app");
 const $$Layout = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Layout;

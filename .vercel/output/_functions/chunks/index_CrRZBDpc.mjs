@@ -1,6 +1,6 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as renderComponent, d as addAttribute, F as Fragment } from './astro/server_C_9WVnBW.mjs';
 import 'kleur/colors';
-import { c as configApp } from './index_C0gxgacJ.mjs';
+import { c as configApp } from './index_C7Rcm1oi.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const paymentTypes = [

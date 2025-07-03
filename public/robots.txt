@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://test-gg-seven.vercel.app/
+Sitemap: https://test-gg-seven.vercel.app
