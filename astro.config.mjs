@@ -11,10 +11,10 @@ export default defineConfig({
     }),
     sitemap(),
   ],
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  output: 'static',
+  // adapter: node({
+  //   mode: 'standalone',
+  // }),
   vite: {
     css: {
       preprocessorOptions: {
