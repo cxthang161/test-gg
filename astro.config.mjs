@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://test-gg-seven.vercel.app',
+  site: 'https://test-gg-zl2g.onrender.com',
   integrations: [
     react({
       include: ['**/react/*'],
