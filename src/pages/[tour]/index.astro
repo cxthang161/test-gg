@@ -1,0 +1,61 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import CardTour from '@/components/CardTour/index.astro';
+import HotTour from '@/components/HotTour/index.astro';
+import { configApp } from '@/configs';
+import HeaderSection from '@/components/HeaderSection/index.astro';
+
+export const prerender = false;
+const { tour } = Astro.params;
+
+const currentTour = configApp.tours.find((item) => item.path === tour);
+
+if (!currentTour || !configApp.isTours) return Astro.redirect('/404');
+
+const tourHot =
+  currentTour?.id > 2
+    ? currentTour.id - 1
+    : currentTour.id === 1
+      ? currentTour.id + 1
+      : currentTour.id;
+
+const fetchData = async () => {
+  try {
+    const response = await fetch(`${configApp.urlAPITours}${currentTour?.id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        ProductKey: configApp.productKey,
+      },
+    });
+    const data = await response.json();
+
+    return data.data;
+  } catch (error) {}
+};
+
+const response = await fetchData();
+---
+
+<Layout
+  title={currentTour?.name || ''}
+  description="Khám phá các tour du lịch hấp dẫn và đa dạng mà chúng tôi cung cấp. Từ những chuyến đi khám phá thiên nhiên hoang dã đến những hành trình văn hóa đặc sắc, mỗi tour đều được thiết kế để mang lại trải nghiệm tuyệt vời nhất cho bạn. Hãy cùng chúng tôi khám phá những điểm đến mới lạ, gặp gỡ những người bạn mới và tạo ra những kỷ niệm không thể quên."
+>
+  <section class="combo-tour">
+    <HeaderSection title={currentTour?.name} />
+    <div class="combo-tour__content">
+      <div class="combo-tour__content--list-tour">
+        {response?.map((item: any) => <CardTour dataTour={item} path={tour} />)}
+        {
+          response && response.length === 0 && (
+            <p class="no-content">Không có bài viết</p>
+          )
+        }
+      </div>
+      <HotTour
+        idHotTour={tourHot}
+        path={configApp.tours.find((x) => x.id === tourHot)}
+      />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,63 @@
+---
+import ImageComponent from '../ImageComponent/index.astro';
+import Location from '@/asset/svg/location.svg?raw';
+import Transport from '@/asset/svg/transport.svg?raw';
+import Clock from '@/asset/svg/clock.svg?raw';
+import { CalendarIcon } from 'astro-feather';
+
+const { dataTour, path } = Astro.props;
+---
+
+{
+  dataTour ? (
+    <div class="card-tour">
+      <ImageComponent
+        urlImage={`${dataTour.imageURL}`}
+        width={240}
+        height={240}
+        alt={`img-${dataTour.postName}`}
+      />
+
+      <div class="card-tour__container">
+        <div class="card-tour__container--content">
+          <p class="card-tour__container--content-title">{dataTour.title}</p>
+
+          <div class="card-tour__container--content--des">
+            <div>
+              <Fragment set:html={Location} />
+              <p>{dataTour.departPlace}</p>
+            </div>
+
+            <div>
+              <Fragment set:html={Clock} />
+              <p>{dataTour.duration}</p>
+            </div>
+          </div>
+
+          <div class="card-tour__container--content--des">
+            <div>
+              <Fragment set:html={Transport} />
+              <p>{dataTour.transport}</p>
+            </div>
+
+            <div>
+              <CalendarIcon />
+              <p>{dataTour.departDate}</p>
+            </div>
+          </div>
+
+          <div class="card-tour__container--content--short">
+            <Fragment set:html={dataTour.shortContent} />
+          </div>
+        </div>
+
+        <div class="card-tour__container--price">
+          <strong>{dataTour.totalPrice}</strong>
+          <a href={`/${path}/${dataTour.postName}`}>Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <p>Hiện tại chưa có tours</p>
+  )
+}

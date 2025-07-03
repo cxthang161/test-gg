@@ -1,0 +1,22 @@
+---
+import { MENU } from '@/configs/menu';
+
+const paths: String[] = [];
+
+export const prerender = false;
+const pathname = Astro.url.pathname;
+const getBigPath = pathname?.split('/') ?? [];
+const bigPathString = getBigPath.join('/');
+
+MENU.map((item) => {
+  paths.push(item.path);
+
+  if (item.menuItem) {
+    item.menuItem.map((x) => paths.push(x.path));
+  }
+});
+
+const isExist = paths.includes(bigPathString);
+
+if (!isExist) return Astro.redirect('/404');
+---

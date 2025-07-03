@@ -1,0 +1,40 @@
+.question-page {
+  margin: 24px 0;
+  padding: 0 8px;
+
+  div {
+    & > p:nth-child(1) {
+      font-weight: 500;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    a {
+      color: $color-primary;
+      font-size: 16px;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+// detail
+.question-detail {
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 24px 0;
+    
+    strong {
+      font-weight: 500;
+    }
+  }
+}

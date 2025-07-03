@@ -1,0 +1,73 @@
+---
+import { configApp } from '@/configs';
+import ImageComponent from '../ImageComponent/index.astro';
+import Clock from '@/asset/svg/clock.svg?raw';
+import { CalendarIcon } from 'astro-feather';
+
+const { idHotTour, path } = Astro.props;
+
+const fetchData = async () => {
+  try {
+    const response = await fetch(`${configApp.urlAPITours}${idHotTour}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        ProductKey: configApp.productKey,
+      },
+    });
+    const data = await response.json();
+
+    return data.data;
+  } catch (error) {}
+};
+
+const response = await fetchData();
+---
+
+<div class="tours">
+  <p>Tours hot</p>
+
+  <div class="tours-list">
+    {
+      response?.map((tour: any) => (
+        <div class="hot-tour">
+          <ImageComponent
+            urlImage={`${tour.imageURL}`}
+            width={140}
+            height={107}
+            alt={`img-${tour.postName}`}
+          />
+
+          <div class="hot-tour__container">
+            <div class="hot-tour__content">
+              <p class="hot-tour__content-title">{tour.title}</p>
+
+              <div>
+                <div>
+                  <CalendarIcon />
+                  <p>{tour.departDate}</p>
+                </div>
+
+                <div>
+                  <Fragment set:html={Clock} />
+                  <p>{tour.duration}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hot-tour__content-price">
+              <strong>{tour.totalPrice}</strong>
+              <a href={`/${path?.path}/${tour.postName}`}>Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+
+    {
+      response && response.length === 0 && (
+        <p class="no-content">Không có bài viết</p>
+      )
+    }
+  </div>
+</div>

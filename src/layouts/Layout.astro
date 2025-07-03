@@ -1,0 +1,88 @@
+---
+import HeaderLayout from './HeaderLayout/index.astro';
+import FooterLayout from './FooterLayout/index.astro';
+import { ViewTransitions } from 'astro:transitions';
+import SocialNetwork from '../components/SocialNetwork/index.astro';
+import '../asset/styles/_index.scss';
+import { configApp } from '@/configs';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+
+const isNotFoundPage = path === '/404';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <slot name="head" />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Template-v2" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="fb:page_id" content={configApp.fb_id} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    {
+      isNotFoundPage && (
+        <meta property="og:url" content={`${configApp.website}${path}`} />
+      )
+    }
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {
+      !isNotFoundPage && (
+        <link rel="canonical" href={`${configApp.website}${path}`} />
+      )
+    }
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>{title}</title>
+    <!-- Google Tag Manager -->
+    <script lang="js">
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MJSVF2VQ');
+    </script>
+    <!-- End Google Tag Manager -->
+    <ViewTransitions />
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MJSVF2VQ"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <main class="container">
+      <HeaderLayout />
+
+      <div class="content">
+        <slot />
+        <SocialNetwork />
+      </div>
+
+      <FooterLayout />
+    </main>
+  </body>
+</html>

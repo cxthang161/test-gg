@@ -1,0 +1,133 @@
+---
+import { ClockIcon, MenuIcon, PhoneCallIcon } from 'astro-feather';
+import { MENU } from '../../configs/menu';
+import { configApp } from '../../configs/index';
+import ImageComponent from '../../components/ImageComponent/index.astro';
+---
+
+<header>
+  <div class="header">
+    <div class="header-content">
+      <div class="header_menu">
+        <MenuIcon />
+      </div>
+      <div class="header-logo">
+        <a href="/" data-astro-reload
+          ><ImageComponent
+            urlImage={configApp.urlImage + configApp.logo}
+            alt="Đặt vé máy bay"
+            width={80}
+            height={48}
+          /></a
+        >
+        <p>{configApp.title_meta_layout}</p>
+      </div>
+      <div class="header-contact">
+        <a href={`tel:${configApp.hotline_1}`}><PhoneCallIcon /></a>
+
+        <div class="header-contact_item">
+          <div>
+            <p>Tổng đài hỗ trợ:</p>
+            <p class="header-contact_item__phone">{configApp.hotline_1}</p>
+          </div>
+          <div>
+            <p>
+              Giờ làm việc: <strong>0h-24h</strong> (không nghỉ)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu" class="menu">
+      <ul>
+        {
+          MENU.map((item, index) => (
+            <li class="menu-item">
+              {item.menuItem ? (
+                <p class="menu-item__btn" id={`_menu-btn-${index}`}>
+                  {item.title}
+                </p>
+              ) : (
+                <a
+                  href={item.path}
+                  data-astro-reload={item.isReload ? true : false}
+                >
+                  {item.title}
+                </a>
+              )}
+
+              {item.menuItem && (
+                <ul id="menu-nav">
+                  {item.menuItem.map((menu) => (
+                    <li>
+                      <a href={menu.path}>{menu.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="title">
+    <ClockIcon />
+
+    <div class="title-item">
+      <h5 class="title-item_header">
+        Giờ làm việc: từ 0h-24h, liên tục không nghỉ, kể cả chủ nhật, các ngày
+        lễ tết
+      </h5>
+      <h5>
+        Quý khách có bất kì thắc mắc hoặc cần trợ giúp, vui lòng gọi tổng đài <span
+          >{configApp.hotline_1}</span
+        >
+      </h5>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const button = document.querySelector('.header_menu');
+    const nav = document.getElementById('menu');
+    const menuNav = document.querySelectorAll('[id^="_menu-btn"]');
+
+    if (window.innerWidth < 815) {
+      menuNav.forEach((menuBtn) => {
+        menuBtn.addEventListener('click', (event) => {
+          const target = event.target as HTMLElement; // Chuyển đổi kiểu
+          const menuNav = target.nextElementSibling as HTMLElement;
+          menuNav?.classList.toggle('active-menu');
+        });
+      });
+    }
+
+    if (button !== null) {
+      button.addEventListener('click', toggleMenu);
+    }
+
+    function toggleMenu() {
+      if (nav !== null) {
+        nav.classList.toggle('menu-visibale');
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      if (
+        nav !== null &&
+        !nav.contains(event.target as Node) &&
+        !button?.contains(event.target as Node)
+      ) {
+        nav.classList.remove('menu-visibale');
+        const activeMenus = document.querySelectorAll('.menu-nav.active-menu');
+        activeMenus.forEach((menuNav) =>
+          menuNav.classList.remove('active-menu')
+        );
+      }
+    });
+  });
+</script>

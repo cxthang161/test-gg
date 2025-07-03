@@ -1,0 +1,30 @@
+.policy-content {
+  .policy-content__title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .policy-content__detail {
+    margin-bottom: 1rem;
+  }
+  .policy-content__detail:last-child {
+    margin-bottom: 0;
+  }
+
+  .policy-content__detail-ul {
+    list-style-type: '-';
+    margin-right: 2px;
+    margin-bottom: 1rem;
+
+    &__li {
+      padding-left: 3px;
+    }
+  }
+}
+
+@include responsive('md') {
+  .privacy-policy {
+    padding: 0 8px;
+  }
+}

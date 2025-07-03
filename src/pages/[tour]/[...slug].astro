@@ -1,0 +1,167 @@
+---
+import { configApp } from '@/configs';
+import Layout from '@/layouts/Layout.astro';
+import Location from '@/asset/svg/location.svg?raw';
+import Transport from '@/asset/svg/transport.svg?raw';
+import Clock from '@/asset/svg/clock.svg?raw';
+import { CalendarIcon } from 'astro-feather';
+import { isEmpty } from '@/common';
+import { Image } from 'astro:assets';
+
+export const prerender = false;
+const { slug, tour } = Astro.params;
+
+const isParams = configApp.tours.find((x) => x.path === tour);
+
+if (!isParams) return Astro.redirect('/404');
+
+const fetchData = async () => {
+  try {
+    const response = await fetch(`${configApp.urlAPIToursDetail}${slug}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        ProductKey: configApp.productKey,
+      },
+    });
+    const data = await response.json();
+
+    return data.data;
+  } catch (error) {}
+};
+
+const response = await fetchData();
+if (isEmpty(response)) return Astro.redirect('/404');
+const departDates = response?.departDate.split('.');
+---
+
+<Layout title={response.title} description={response.shortContent || ''}>
+  <div class="section-tour-detail space-section">
+    <div class="container">
+      <div class="tour-thumb">
+        <Image
+          src={!isEmpty(response?.imageURL)
+            ? response?.imageURL
+            : '/errorImage.png'}
+          width={1200}
+          height={400}
+          alt={`img-${response?.imageURL}`}
+          onerror={`this.onerror=null;this.src='/errorImage.png';`}
+        />
+      </div>
+      <p class="content-tour-title">
+        {response.title}
+      </p>
+      <div class="button-to-detail">
+        <a href={'#tour-summary'} class="button-to-detail__link">
+          <span class="button-to-detail__text">Tổng quan</span>
+        </a>
+        <a href={'#tour-total-cost'} class="button-to-detail__link">
+          <span class="button-to-detail__text">Chi tiết giá</span>
+        </a>
+        <a href={'#tour-price-includes'} class="button-to-detail__link">
+          <span class="button-to-detail__text">Giá bao gồm</span>
+        </a>
+        <a href={'#tour-journey'} class="button-to-detail__link">
+          <span class="button-to-detail__text">Hành trình</span>
+        </a>
+        <a href={'#tour-policy'} class="button-to-detail__link">
+          <span class="button-to-detail__text">Chính sách</span>
+        </a>
+      </div>
+      <div class="tour-detail">
+        <div class="content-tour">
+          <div class="tour-detail-short-content" id="tour-summary">
+            <p class="tour-detail-short-content-title">Tổng quan</p>
+            <div set:html={response.shortContent} />
+          </div>
+          <div class="tour-detail-price-content" id="tour-total-cost">
+            <p class="tour-detail-price-content-title">Chi tiết giá</p>
+            <div set:html={response.priceContent} />
+          </div>
+          <div class="tour-detail-price-detail" id="tour-price-includes">
+            <p class="tour-detail-price-detail-title">Giá bao gồm</p>
+            <div set:html={response.priceDetail} />
+          </div>
+          <div class="tour-detail-journey" id="tour-journey">
+            <p class="tour-detail-journey-title">Hành trình</p>
+            <div set:html={response.journey} />
+          </div>
+          <div class="tour-detail-price-policy" id="tour-policy">
+            <p class="tour-detail-price-policy-title">Chính sách</p>
+            <div set:html={response.policy} />
+          </div>
+        </div>
+        <div class="tour-detail-info">
+          <div style="position: sticky; top: 0px">
+            <div class="info-tour-common">
+              <p class="info-tour-common-price">{response.totalPrice}</p>
+              <div class="tour-detail-info-date">
+                <div class="tour-detail-info-date__time">
+                  {
+                    response?.duration && (
+                      <>
+                        <Fragment set:html={Clock} />
+
+                        <p class="tour-detail-info-date__time__text">
+                          {response?.duration}
+                        </p>
+                      </>
+                    )
+                  }
+                </div>
+              </div>
+              <div class="tour-detail-info-date">
+                <div class="tour-detail-info-date__departure">
+                  {
+                    (
+                      <>
+                        <CalendarIcon />
+                        <div>
+                          {departDates.map((date: any) => (
+                            <p class="tour-detail-info-date__departure__text">
+                              {date}
+                            </p>
+                          ))}
+                        </div>
+                      </>
+                    )
+                  }
+                </div>
+              </div>
+              <div class="tour-detail-info-location-vehicle">
+                <div class="tour-detail-info-location-vehicle__location">
+                  {
+                    response?.departPlace && (
+                      <>
+                        <Fragment set:html={Location} />
+
+                        <p class="tour-detail-info-location-vehicle__location__text">
+                          Khởi hành:
+                          <strong>{response.departPlace}</strong>
+                        </p>
+                      </>
+                    )
+                  }
+                </div>
+                <div class="tour-detail-info-location-vehicle__vehicle">
+                  {
+                    response?.transport && (
+                      <>
+                        <Fragment set:html={Transport} />
+
+                        <p class="tour-detail-info-location-vehicle__vehicle__text">
+                          Phương tiện: {response.transport}
+                        </p>
+                      </>
+                    )
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

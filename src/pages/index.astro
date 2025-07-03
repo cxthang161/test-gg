@@ -1,0 +1,12 @@
+---
+import { configApp } from '@/configs';
+import Layout from '../layouts/Layout.astro';
+import Home from './home/index.astro';
+---
+
+<Layout
+  title=`${configApp.company_name} - Đặt vé máy bay online`
+  description={configApp.company_description}
+>
+  <Home />
+</Layout>

@@ -1,0 +1,26 @@
+---
+import '../../asset/styles/_index.scss';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+  title="Tìm kiếm"
+  description="Chúng tôi cung cấp thông tin chi tiết về lịch bay nội địa và quốc tế, giúp bạn tìm kiếm chuyến bay phù hợp với thời gian và điểm đến mong muốn. Hãy nhập thông tin về địa điểm khởi hành, điểm đến và ngày bay để nhận danh sách các chuyến bay hiện có cùng với giờ cất cánh, giờ hạ cánh và mức giá. Dù bạn đang lên kế hoạch cho một chuyến đi ngắn ngày hay một kỳ nghỉ dài, phần tìm kiếm sẽ giúp bạn tiết kiệm thời gian và dễ dàng lựa chọn chuyến bay lý tưởng."
+>
+  <section class="flight-result-container">
+    <div id="EmbeddedSearchResult"></div>
+  </section>
+</Layout>
+
+<script is:inline>
+  var embeddedHost = 'https://embedded.vnisc.com.vn';
+  var embeddedKey = '12Gdn*n68Ar!z+Ma';
+  var urlResult = '/result';
+  var embeddedType = 'vertical';
+  (function () {
+    const script = document.createElement('script');
+    script.src = embeddedHost + '/Resources/Main/Embedded.js';
+    script.async = true;
+    document.body.appendChild(script);
+  })();
+</script>

@@ -1,0 +1,31 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import questions from '../../configs/questions.json';
+import { convertStringtoUrl } from '@/common';
+import HeaderSection from '@/components/HeaderSection/index.astro';
+
+export const prerender = false;
+---
+
+<Layout
+  title="Câu hỏi thường gặp"
+  description="Khám phá những câu hỏi thường gặp về sản phẩm/dịch vụ của chúng tôi. Trang này cung cấp những thông tin hữu ích, giải đáp thắc mắc của bạn về cách sử dụng, đặt hàng, thông tin về vé."
+>
+  <div class="question-page">
+    <HeaderSection title="Câu hỏi thường gặp" />
+
+    <ul>
+      {
+        questions.map((question) => {
+          const url = convertStringtoUrl(question.name);
+
+          return (
+            <li>
+              <a href={'/questions' + url}>›› {question.name}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Layout>
