@@ -13,9 +13,7 @@ export default defineConfig({
     sitemap(),
   ],
   output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: vercel(),
   vite: {
     css: {
       preprocessorOptions: {
